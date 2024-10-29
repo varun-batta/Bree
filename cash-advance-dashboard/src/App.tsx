@@ -83,7 +83,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{'background': darkMode ? '#152238' : '#FFFFFF', height: '100vh'}}>
+      <div style={{display: 'flex', flexDirection: 'column', 'background': darkMode ? '#151515' : '#FFFFFF', height: '100vh'}}>
         {/* Theme switcher */}
         <Typography align="center" style={darkMode ? {...styles.darkModeText, position: 'absolute', right: '16px', top: '72px'}  : {...styles.lightModeText, position: 'absolute', right: '16px', top: '72px'}}>
           Dark Mode
@@ -92,7 +92,7 @@ const App: React.FC = () => {
         <Typography style={darkMode ? {...styles.darkModeText, padding: '32px'} : {...styles.lightModeText, padding: '32px'}} variant="h4" align="center" gutterBottom>
           Cash Advance Dashboard
         </Typography>
-        <div style={{margin: '32px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-around', alignContent: 'center', alignSelf: 'center'}}>
+        <div style={{margin: '32px', display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', alignSelf: 'center', width: '60%'}}>
           <div style={{display: 'flex', flexDirection: 'column'}}>
             <Typography style={darkMode ? styles.darkModeText : styles.lightModeText} variant="h6" align="center" gutterBottom>
               Balance:

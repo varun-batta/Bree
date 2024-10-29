@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, Select, MenuItem, Typography, SelectChangeEvent } from '@mui/material';
+import { FormControl, Select, MenuItem, Typography, SelectChangeEvent, Paper } from '@mui/material';
 
 interface Props {
   currentFilter: 'All' | 'Pending' | 'Completed';
@@ -12,9 +12,9 @@ const StatusFilter: React.FC<Props> = ({ currentFilter, changeFilter, isDarkMode
   const selectStyle = isDarkMode ? { color: 'white' } : { color: 'black' };
 
   return (
-    <>
+    <Paper elevation={3} style={{ padding: '10px', marginLeft: '32px', width: '20%' }}>
       <Typography style={titleStyle} variant="h6">Status Filter</Typography>
-      <FormControl style={{ marginLeft: '32px', width: '10%' }}>
+      <FormControl style={{ marginLeft: '32px', width: '80%' }}>
         <Select
           data-testid="status-filter"
           style={selectStyle}
@@ -26,7 +26,7 @@ const StatusFilter: React.FC<Props> = ({ currentFilter, changeFilter, isDarkMode
           <MenuItem value="Completed">Completed</MenuItem>
         </Select>
       </FormControl>
-    </>
+    </Paper>
   );
 };
 
