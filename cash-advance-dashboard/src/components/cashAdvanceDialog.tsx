@@ -5,11 +5,10 @@ interface Props {
   isOpen: boolean
   onClose: () => void
   onSubmit: (amount: number) => void
-  maxAllowedAmount: number
 }
 
 const CashAdvanceModal: React.FC<Props> = (props: Props) => {
-  const { isOpen, onClose, onSubmit, maxAllowedAmount } = props;
+  const { isOpen, onClose, onSubmit } = props;
   const [amount, setAmount] = useState<number>(0);
 
   const handleSubmit = () => {
@@ -29,7 +28,6 @@ const CashAdvanceModal: React.FC<Props> = (props: Props) => {
           fullWidth
           value={amount}
           onChange={(e) => setAmount(Number(e.target.value))}
-          inputProps={{ min: 1, max: maxAllowedAmount }} // Restrict input
         />
       </DialogContent>
       <DialogActions>

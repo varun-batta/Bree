@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {
   Typography,
   Button,
-  Snackbar,
   Switch,
   SelectChangeEvent,
 } from '@mui/material';
@@ -127,7 +126,6 @@ const App: React.FC = () => {
 
         <CashAdvanceModal
           isOpen={modalOpen}
-          maxAllowedAmount={maxAdvance}
           onClose={() => setModalOpen(false)}
           onSubmit={handleRequestCashAdvance}
         />
